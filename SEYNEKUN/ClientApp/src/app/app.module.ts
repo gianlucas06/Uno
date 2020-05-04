@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
@@ -14,6 +14,7 @@ import { PanelaRegistroComponent } from './Produccion/panela-registro/panela-reg
 import { AppRoutingModule } from './app-routing.module';
 import { PanelaService } from './services/panela.service';
 import { FiltroProductoPipe } from './pipe/filtro-producto.pipe';
+import { LogginComponent } from './loggin/loggin.component';
 
 
 
@@ -27,8 +28,10 @@ import { FiltroProductoPipe } from './pipe/filtro-producto.pipe';
     PanelaConsultaComponent,
     PanelaRegistroComponent,
     FiltroProductoPipe,
+    LogginComponent,
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,

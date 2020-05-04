@@ -13,26 +13,33 @@
         <div class="row">
             
                 <h2 class="form-tittle">REGISTRO DE PRODUCCION DE <span>PANELA</span></h2> 
-                <form class="form" >
+                <form [formGroup]="formGroup">
+
                     <div class="form-group">
                         <label for="Codigo" class="form-label">Codigo Registro</label>
-                        <input type="text" class="form-input" name="Idregistro" [(ngModel)]="panela.idregistro" />
+                        <input type="text" name="idregistro" formControlName="idregistro" class="form-control"
+                        [ngClass]="{ 'is-invalid':  control.idregistro.errors }"/>
+                        
                     </div>
                     <div class="form-group">
                         <label for="fecha" class="form-label">Fecha de ingreso</label>
-                        <input type="date" class="form-input"  name="fechaIngreso" [(ngModel)]="panela.fechaIngreso" />
+                        <input type="date"  name="fechaIngreso" formControlName="fechaIngreso" class="form-control" 
+                        [ngClass]="{ 'is-invalid':  control.fechaIngreso.errors }"/>
                     </div>
                     <div class="form-group">
                         <label for="NumeroLote" class="form-label" >Numero de lote</label>
-                        <input type="text" class="form-input"  name="numeroLote" [(ngModel)]= "panela.numeroLote"  />
+                        <input type="text"  name="numeroLote" formControlName="numeroLote" class="form-control"
+                        [ngClass]="{ 'is-invalid':  control.numeroLote.errors }"  />
                     </div>
                     <div class="form-group">
                         <label for="NumeroLoteAgricola" class="form-label">Numero de lote Agricola</label>
-                        <input type="text" class="form-input"  name="numeroLoteAgricola" [(ngModel)]= "panela.numeroLoteAgricola"  />
+                        <input type="text"  name="numeroLoteAgricola" formControlName="numeroLoteAgricola" class="form-control"
+                        [ngClass]="{ 'is-invalid':  control.numeroLoteAgricola.errors }"  />
                     </div>
                     <div class="form-group">
                         <label for="Etapas" class="form-label">Etapas</label>
-                        <select name="etapas" class="form-input" [(ngModel)]= "panela.etapas"  > 
+                        <select name="etapas" formControlName="etapas" class="form-control" 
+                         [ngClass]="{ 'is-invalid':  control.etapas.errors }" > 
                             <option>Filtrado</option>
                             <option>Evaporacion</option>
                             <option>Punteo</option>
@@ -41,11 +48,11 @@
                     </div>
                     <div class="form-group">
                         <label for= "Cantidad"  class="form-label">Cantidad obtenida</label>
-                        <input type="text" class="form-input"  name="cantidad" [(ngModel)]= "panela.cantidad"   />
+                        <input type="text"   name="cantidad" formControlName="cantidad" class="form-control"   />
                     </div>
                     <div class="form-group">
                         <label for="Responsable" class="form-label">Responsable</label>
-                        <input type="text" class="form-input"  name="responsable" [(ngModel)]= "panela.responsable"  />
+                        <input type="text"   name="responsable" formControlName="responsable" class="form-control"  />
                     </div>
                     <div class="text-center">
                         <button class=" btn btn-success mr-1" (click)="add()">Registrar</button>

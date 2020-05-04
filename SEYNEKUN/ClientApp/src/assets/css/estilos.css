@@ -1,10 +1,10 @@
 
 body{
-    background: url("assets/imagenes/caña1.jpeg");
+    background: url("assets/ImagenesCarousel/seynekun-sierra-nevada.jpg");
     background-repeat: no-repeat;
     position: relative;
     width: 100%;
-    margin: 60px;
+    margin: 20px;
     padding: 5% 5% 5% 5%; 
     background-size: 100% 100%;
     max-width: 100%;
@@ -12,8 +12,7 @@ body{
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     background-attachment: fixed;
-
-    
+   
 }
 
 .form-tittle{
@@ -47,7 +46,7 @@ span{
     position: relative;
     
 }
- .form-input{
+ .form-control{
     
     position: relative;
     background: rgba(0, 0, 0, .7);
@@ -64,19 +63,7 @@ span{
      text-align: center;
 
  }
- .btn-registrar{
-    position: relative;
-    background: rgba(11, 214, 38, 0.7);
-    color: white;
-    outline: none;
- }
- .Cancel{
-    position: relative;
-    background: rgba(214, 11, 28, 0.7);
-    color: white;
-    outline: none;
- }
- 
+
  
  /*CSS DE CONSULTA PANELA*/
  .rowConsulta{

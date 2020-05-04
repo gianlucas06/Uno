@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { PanelaRegistroComponent } from './Produccion/panela-registro/panela-registro.component';
 import { PanelaConsultaComponent } from './Produccion/panela-consulta/panela-consulta.component';
 import { Routes, RouterModule } from '@angular/router';
+import { LogginComponent } from './loggin/loggin.component';
 
 
 
@@ -15,6 +16,10 @@ const routes: Routes = [
   {
     path: 'panelaConsulta',
     component: PanelaConsultaComponent
+  },
+  {
+    path: 'loggin',
+    component: LogginComponent
   }
 ];
 

@@ -1,5 +1,6 @@
 
 <header>
+
   <nav
   class="navbar-1 navbar-fixed-top navbar-expand-sm navbar-toggleable-sm navbar  caja-shadow mb-3 "
 >
@@ -21,8 +22,13 @@
       [ngClass]="{ show: isExpanded }"
     >
       <ul class="navbar-nav flex-grow">
+        <li
+        class="nav-item"
+        [routerLinkActive]="['link-active']"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
         <li class="nav-item" [routerLinkActive]="['link-active']">
-          <a class="nav-link " [routerLink]="['/']"
+          <a class="nav-link " [routerLink]="['/loggin']"
             >ACCEDER</a
           >
       </ul>
@@ -75,6 +81,6 @@
       </div>
     </div>
   </nav>
-  
+ 
 </header>
 
