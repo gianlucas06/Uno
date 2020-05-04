@@ -1,4 +1,6 @@
-﻿using System;
+﻿using System.Globalization;
+using System.Linq;
+using System;
 using System.Collections.Generic;
 using Datos;
 using Entity;
@@ -18,7 +20,10 @@ namespace Logica
         {
             try
             {
-                 
+                 Panela panelaBuscar = BuscarPorIdentificacion(panela.Idregistro);
+                 if(panelaBuscar !=null){
+                     return new GuardarPanelaResponse("Error este control ya se encuentra registrado");
+                 }
                 _conexion.Open();
                 _repositorio.Guardar( panela);
                 _conexion.Close();

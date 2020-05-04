@@ -38,7 +38,11 @@ namespace SEYNEKUN.Controllers
             var response = _panelaService.Guardar(panela);
             if (response.Error) 
             {
-                return BadRequest(response.Mensaje);
+                ModelState.AddModelError("Guardar control de produccion", response.Mensaje);
+                var problemDetails= new ValidationProblemDetails(ModelState){
+                    Status= StatusCodes.Status400BadRequest,
+                };
+                return BadRequest(problemDetails);
             }
             return Ok(response.Panela);
         }

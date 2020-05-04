@@ -17,8 +17,13 @@
 
                     <div class="form-group">
                         <label for="Codigo" class="form-label">Codigo Registro</label>
+                        
                         <input type="text" name="idregistro" formControlName="idregistro" class="form-control"
                         [ngClass]="{ 'is-invalid':  control.idregistro.errors }"/>
+                        <div *ngIf=" control.idregistro.errors" class="invalid-feedback">
+                            <div class="mensaje-error" *ngIf="control.idregistro.errors.required">*La Identificación es requerida*</div>
+                        </div>
+                        
                         
                     </div>
                     <div class="form-group">
@@ -30,11 +35,17 @@
                         <label for="NumeroLote" class="form-label" >Numero de lote</label>
                         <input type="text"  name="numeroLote" formControlName="numeroLote" class="form-control"
                         [ngClass]="{ 'is-invalid':  control.numeroLote.errors }"  />
+                        <div *ngIf=" control.numeroLote.errors" class="invalid-feedback">
+                            <div class="mensaje-error" *ngIf="control.numeroLote.errors.required">*Numero de Lote es requerido*</div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="NumeroLoteAgricola" class="form-label">Numero de lote Agricola</label>
                         <input type="text"  name="numeroLoteAgricola" formControlName="numeroLoteAgricola" class="form-control"
                         [ngClass]="{ 'is-invalid':  control.numeroLoteAgricola.errors }"  />
+                        <div *ngIf=" control.numeroLoteAgricola.errors" class="invalid-feedback">
+                            <div class="mensaje-error" *ngIf="control.numeroLoteAgricola.errors.required">*Numero de Lote Agricola es requerido*</div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="Etapas" class="form-label">Etapas</label>
@@ -45,14 +56,25 @@
                             <option>Punteo</option>
                             <option>Moldeo</option>                       
                          </select>
+                         <div *ngIf=" control.etapas.errors" class="invalid-feedback">
+                            <div class="mensaje-error" *ngIf="control.etapas.errors.required">*Etapa es requerida*</div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for= "Cantidad"  class="form-label">Cantidad obtenida</label>
-                        <input type="text"   name="cantidad" formControlName="cantidad" class="form-control"   />
+                        <input type="text"   name="cantidad" formControlName="cantidad" class="form-control" 
+                        [ngClass]="{ 'is-invalid':  control.cantidad.errors }" />
+                        <div *ngIf=" control.cantidad.errors" class="invalid-feedback">
+                            <div class="mensaje-error" *ngIf="control.cantidad.errors.required">*Cantidad es requerida*</div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="Responsable" class="form-label">Responsable</label>
-                        <input type="text"   name="responsable" formControlName="responsable" class="form-control"  />
+                        <input type="text"   name="responsable" formControlName="responsable" class="form-control"
+                        [ngClass]="{ 'is-invalid':  control.responsable.errors }"/>
+                        <div *ngIf=" control.responsable.errors" class="invalid-feedback">
+                            <div class="mensaje-error" *ngIf="control.responsable.errors.required">*Responsable es requerido*</div>
+                        </div>
                     </div>
                     <div class="text-center">
                         <button class=" btn btn-success mr-1" (click)="add()">Registrar</button>

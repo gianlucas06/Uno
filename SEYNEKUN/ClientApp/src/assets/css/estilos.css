@@ -63,7 +63,12 @@ span{
      text-align: center;
 
  }
-
+.mensaje-error{
+    font-size: 17px ;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: rgba(250, 37, 0, 0.808);
+}
  
  /*CSS DE CONSULTA PANELA*/
  .rowConsulta{
