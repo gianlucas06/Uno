@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Panela } from '../models/panela';
 import { PanelaService } from 'src/app/services/panela.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AlertModalComponent } from 'src/app/@base/alert-modal/alert-modal.component';
 
 @Component({
   selector: 'app-panela-registro',
@@ -11,7 +13,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class PanelaRegistroComponent implements OnInit {
   formGroup: FormGroup;
   panela:Panela;
-  constructor(private panelaService: PanelaService, private formBuilder: FormBuilder) { }
+  constructor(private panelaService: PanelaService, private formBuilder: FormBuilder,
+    private modalService: NgbModal) { }
 
   ngOnInit() {
     this.panela= new  Panela();
@@ -70,7 +73,10 @@ responsable: [this.panela.responsable, Validators.required]
     this.panela = this.formGroup.value;
     this.panelaService.post(this.panela).subscribe(p => {
       if (p != null) {
-        alert('panela creada!');
+        const messageBox = this.modalService.open(AlertModalComponent)
+        messageBox.componentInstance.title = "Resultado Operación";
+        messageBox.componentInstance.message = 'Producto creado!!! :-)';
+     
         this.panela = p;
       }
     });

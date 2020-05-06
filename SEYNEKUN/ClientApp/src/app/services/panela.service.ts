@@ -29,7 +29,7 @@ export class PanelaService {
           );
     }
     post(panela: Panela): Observable<Panela> {
-      return this.http.post<Panela>(this.baseUrl + 'api/panela', panela)
+      return this.http.post<Panela>(this.baseUrl + 'api/Panela', panela)
           .pipe(
               tap(_ => this.handleErrorService.log('datos enviados')),
               catchError(this.handleErrorService.handleError<Panela>('Registrar panela', null))
@@ -38,8 +38,8 @@ export class PanelaService {
 
     /** DELETE: delete the hero from the server */
    delete (panela: Panela | string): Observable<Panela> {
-    const id = typeof panela === 'string' ? panela : panela.idregistro;
-    const url = `${'api/panela'}/${id}`;
+    const id = typeof panela == 'string' ? panela : panela.idregistro;
+    const url = `${'api/Panela'}/${id}`;
 
     return this.http.delete<Panela>(url)
     .pipe(
